@@ -1,0 +1,15 @@
+.carousal-container {
+    height: 70vh !important;
+    object-fit: stretch;  
+}
+.left-side-indicator-container{
+    width:100%;
+    list-style: none;
+    display: grid;
+}
+.test{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height: 70vh !important;
+    overflow: hidden
+}
