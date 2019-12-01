@@ -1,6 +1,6 @@
 import React from 'react'
 import {Card,Button} from 'react-bootstrap'
-import images from '../json-data/images'
+// import images from '../json-data/images'
 
 export default function CardsItem (props){
     return(

@@ -1,3 +1,3 @@
-const pagedetails=[{name:'Home',pathname:'#ewdq'},{name:'About US',pathname:'#ewdq'},{name:'Contact Us',pathname:'#ewdq'}]
+const pagedetails=[{name:'Home',pathname:'/'},{name:'AboutUS',pathname:'/AboutUS'},{name:'ContactUs',pathname:'/ContactUs'}]
 
 export default pagedetails
