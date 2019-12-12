@@ -8,14 +8,15 @@ import {useTransition,animated} from 'react-spring'
 
 
 const MyRouter=()=>{
+
     const {location}=useContext(__RouterContext)
+    
     const transition=useTransition(location,location=>location.pathname,{
         from:{opacity:0,transform:'translate(100%, 0)'},
         enter:{opacity:1,transform:'translate(0%, 0)'},
         leave:{opacity:0.5,transform:'translate(-50%, 0)'}
     })
 
-   
     return (
         <>
         {
@@ -23,7 +24,11 @@ const MyRouter=()=>{
                 <animated.div key={key} style={props} >
                     <Switch location={item}>            
                         {pagedetails.map(page=>(
-                            <Route key={page.pathname} exact path={page.pathname} component={()=>`${page.name}`} />
+                            <Route key={page.pathname} exact path={page.pathname} component={
+                                page.name==='Home'?Home
+                                :page.name==='AboutUS'?AboutUS
+                                :page.name==="ContactUs"?ContactUs
+                                :null} />
                         ))}
                         </Switch>
                 </animated.div>

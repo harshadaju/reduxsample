@@ -13,8 +13,7 @@ const MyNavbar=({navItems})=>{
         <div className='col-lg-8'></div>
             <Nav className="justify-content-end">
             {navItems.map(navitem=>(
-                <Nav.Link className="justify-content-end" key={navitem.name} >
-                <Link className='.link' to={navitem.pathname}>{navitem.name}</Link>
+                <Nav.Link className="justify-content-end" key={navitem.name} href={`#${navitem.name}`}>{navitem.name}
                 </Nav.Link>
             ))}          
             </Nav>                      
