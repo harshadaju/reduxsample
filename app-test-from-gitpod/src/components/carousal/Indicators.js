@@ -6,7 +6,10 @@ import React from 'react'
         <ul className="carousel-indicators">
             {
                 images.map(image=>(
-                    <li key={image.id} onClick={()=>setIndex(images.indexOf(image))}  className={images.indexOf(image)===currentIndex?'active':''}></li>
+                    <li key={image.id} 
+                        onClick={()=>setIndex(images.indexOf(image))}  
+                        className={images.indexOf(image)===currentIndex?'active':''}>
+                    </li>
                 ))
             }        
         </ul>
