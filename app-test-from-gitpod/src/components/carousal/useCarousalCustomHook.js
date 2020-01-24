@@ -1,18 +1,17 @@
 import {useState,useEffect} from 'react'
 
 const useCarousalHook=(images)=>{
-    const [currentIndex,setCurrentIndex]=useState(0)    
-    const timer=()=>setTimeout(()=>{
-        if((images.length-1)==currentIndex)
-        setCurrentIndex(0)
-        else
-        setCurrentIndex(currentIndex+1)
-    },3000)
-    useEffect(()=>{
-        timer()
-        return clearTimeout(timer)
-    },[currentIndex])
-    return [currentIndex,setCurrentIndex]
+     const [index, setIndex] = useState(0);  
+     const [direction, setDirection] = useState(null);
+
+    const handleSelect = (selectedIndex, e) => {
+        debugger
+        setIndex(selectedIndex);
+        if(e!=undefined)
+        setDirection(e.direction);
+    };
+
+    return [index,direction,handleSelect]
 }
 
 export default useCarousalHook

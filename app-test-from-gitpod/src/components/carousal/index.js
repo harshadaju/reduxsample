@@ -1,35 +1,15 @@
-import React,{useState, useEffect} from 'react'
+import React from 'react'
 import './style.css'
 import {Carousel,Row,Col} from 'react-bootstrap'
 import ImageIndicatorList from './leftsideindicator'
+import useCarousalHooks from './useCarousalCustomHook'
 
 const Carousal=({images})=> {
-
-  const [index, setIndex] = useState(0);  
-  const [direction, setDirection] = useState(null);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-    setDirection(e.direction);
-  };
-
-const resize=()=>{
-    setWindowWidth(window.innerWidth)
-    setwindowHeight(window.innerHeight)
-    console.log(windowWidth,windowHeight)
-}
-  const [windowWidth,setWindowWidth]=useState(0)
-  const [windowHeight,setwindowHeight]=useState(0)
-  useEffect(()=>{
-      
-      window.addEventListener('resize',resize)
-      return window.removeEventListener('resize',resize)
-  },[windowWidth,windowHeight,'resize'])
-
+const [index,direction,handleSelect]=useCarousalHooks(images);
   return (
       <Row>
-        <Col xs={3} md={3} lg={2} className='leftIndicator'>
-            <ImageIndicatorList images={images} />
+        <Col xs={3} md={3} lg={2} className='leftIndicator' >
+            <ImageIndicatorList images={images} handleSelect={handleSelect} index={index}/>
         </Col>
         <Col xs={9} md={9} lg={10}>
         <div className="carousal-container">

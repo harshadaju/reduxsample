@@ -10,6 +10,10 @@
 }
 .leftIndicator{
     height:  70vh !important;
-    overflow: hidden;
+    overflow: hidden; 
+    overflow-y: scroll;   
+    overflow: -moz-scrollbars-none; 
+    -ms-overflow-style: none;
 }
+.leftIndicator::-webkit-scrollbar { width: 0 !important }
 
